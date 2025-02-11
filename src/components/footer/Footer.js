@@ -91,7 +91,7 @@ const Footer = () => {
 }
   return (
     <section className='mt-48  bottom-0 bg-blue-200 flex flex-col justify-center py-24 ' id ="contact">
-
+      
       <div className='   flex justify-center'>
         <div className='flex flex-col justify-center'>
           <h2 className='text-5xl mb-10 text-center  header-font' >Contact Us</h2>

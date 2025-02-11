@@ -38,7 +38,7 @@ const Layout = () => {
 
       {/* Fixed Background Container */}
       <div 
-        className="fixed top-0 left-0 w-full h-full bg-cover bg-blue-200 bg-center -z-10 transition-all duration-700"
+        className="fixed top-0 left-0 w-full h-full bg-cover bg-blue-100 bg-center -z-10 transition-all duration-700"
         style={{ backgroundImage: activeBg }}
       ></div>
 
