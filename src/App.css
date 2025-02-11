@@ -1,26 +1,32 @@
-.navbar {
-    display: flex;
-    color: #fff;
-    padding: 10px 20px;
-    justify-content: space-between;
-    background-color: #333;
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,300&family=Vina+Sans&display=swap'); */
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); */
+/* @import "tailwindcss";
+@theme {
+  --font-vina-sans: "vina-sans", sans-serif;
+}  */
+
+:root {
+  --font-robot: "Robot", sans-serif;
+  --font-vina:  "vina-sans", sans-serif;
 }
 
-.navbar a {
-    color: #fff;
-    text-decoration: none;
+.header-font {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgba(59, 84, 46, 1);
 }
 
-.logo {
-    font-size: '1.5rem';
+.about-font {
+  font-family:'Times New Roman', Times, serif;
 }
 
-.navLinks {
-    display: flex;
-    list-style: none;
-    gap: 15px;
+.sub-font-color {
+  color: rgba(64,96,122,1);
 }
 
-.main-section {
-    padding: 3em 3em;
+.parag-color {
+  color: rgba(25,60,89,1);
+}
+
+.parag-font {
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
