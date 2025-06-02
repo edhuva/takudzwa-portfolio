@@ -28,7 +28,7 @@ const BackToTopButton = () => {
   return (
     <div className="flex justify-center w-10 h-10 bottom-20 z-20 right-10 fixed ">
       {BackToTopButton && (
-        <button className="text-4xl  text-blue-600" title='Scroll up' onClick={scrollup}>
+        <button className="text-4xl  text-blue-400" title='Scroll up' onClick={scrollup}>
             <FontAwesomeIcon icon={faAngleDoubleUp}/>
         </button>
         )

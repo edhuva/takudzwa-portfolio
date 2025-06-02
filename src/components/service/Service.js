@@ -1,36 +1,76 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../utils/variants";
+import { Link } from "react-router-dom";
+import VideoList from "../../container/VideoList";
+import GenerateBreadCumb from "../breadcumb/GenerateBreadCumb";
 
-const Service = () => {
+const services = [
+  { name: "Color Grading", link: "/color-grading-videos" },
+  { name: "VFX", link: "/vfx-videos" },
+  { name: "SFX", link: "/sfx-videos" },
+  { name: "Wedding Videos", link: "/wedding-videos" },
+  { name: "YouTube Videos", link: "/youtube-videos" },
+  { name: "TikTok Videos", link: "/tiktok-videos" },
+  { name: "Instagram Videos", link: "/instagram-videos" },
+];
+
+const Service = ({ onHomePage }) => {
   return (
-    <section className='flex flex-col  justify-center  mt-96 mb-96 px-auto md:px-24 py-24 bg-blue-200' id ="service">
-      <div className='md:mx-auto justify-center mx-auto mb-12'>
-        <h2 className='text-4xl md:text-5xl mb-10 text-center header-font' >SERVICES OFFERED</h2>
-        <div className='px-20'>
-          <div className='w-25  h-1 bg-white mx-auto'></div>
+    <section
+      className={`flex flex-col justify-center min-h-screen px-6 md:px-24 py-24 bg-black bg-opacity-80 ${
+        onHomePage ? "mt-0" : "mt-10"
+      }`}
+      id="service"
+    >
+      {!onHomePage && <GenerateBreadCumb />}
+
+      <div
+        className={`flex flex-col items-center justify-center`}
+        id="service"
+      >
+
+        {/* Heading */}
+        <motion.div
+          variants={fadeIn("left", 0.8)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className={`md:mx-auto justify-center mx-auto mt-4 mb-12 border-b-8 border-blue-500 rounded ${
+            onHomePage ? "border-t-4" : ""
+          }`}
+        >
+          <h2 className="text-5xl md:text-5xl mb-3 text-white font-bold text-center">
+            Services
+          </h2>
+        </motion.div>
+
+        {/* Responsive Layout */}
+        <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl">
+          {/* Services List */}
+          <div className="w-full md:w-1/3">
+            <ul className="space-y-4 bg-gray-900 p-6 rounded-xl shadow-lg">
+              {services.map((service, index) => (
+                <li key={index} className="group">
+                  <Link
+                    to={service.link}
+                    className="block w-full text-lg font-semibold text-white bg-gray-800 hover:bg-blue-600 transition-all duration-300 p-4 rounded-lg text-center shadow-md group-hover:scale-105"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Video List */}
+          <div className="w-full md:w-2/3">
+            <VideoList onHomePage={onHomePage} />
+          </div>
         </div>
       </div>
-
-      <div className='sub-font-color italic font-bold text-center text-2xl md:text-3xl mb-14
-      '>
-        <h3>Mx Infinite operates in the following sectors</h3>
-      </div>
-      <div className='parag-color text-center parag-font mb-14 text-xl'>
-        <h4>Healthcare | Corporate | Education | Civil Society / NGOs</h4>
-      </div>
-
-      <div className='parag-color text-center parag-font text-xl max-w-3xl leading-9 mx-auto'>
-        <p className='mb-12 px-2 md:px-0'>All consultancy packages are unique to the customer. Contact us to discuss common access and queer+ inclusivity challenges, and find unique solutions created by a team with first-hand expertise.</p>
-
-        <p className='mb-12 px-2 md:px-0'>Queer+ allyship training packages: want to learn more about how to offer services inclusive to the LGBTIAQ+/Queer+ community? Contact us to discuss tailored training packages to upskill your staff as a team. Allyship training can include, but is not limited to your expert-led training workshop(s), unique materials, branding, policy review, support network setup for your team and/or customers/patients, and M&E framework setup and review.</p>
-
-        <p className='mb-12 px-2 md:px-0'>Patient-driven disability advocacy: be your own best advocate, by consulting with our team of disabled activists, and learn more about access to support services, job opportunities, and how to report instances of discrimination. Led by disabled activists, for and with our community.</p>
-
-        <p className='mb-12 px-2 md:px-0'>Disability advocacy & accessibility workshops: find out more about unique challenges and solutions to accessibility in your workplace for your team and/or patients, and how to build true accessibility practises into your workspace. Training is tailored to key challenges within your team or network, and will help you find key reasonable accommodation strategies.</p>
-
-        <p className='px-2 md:px-0'>Youth disability community support group networks: a unique online (Zoom) monthly support group for patients with any disabilit/ies, offering a safe environment in which to discuss common challenges, and community solutions, led by skilled facilitators. Parents/guardians/caregivers are welcome to join to observe/learn more about common challenges.</p>
-      </div>
     </section>
-  )
-}
+  );
+};
 
-export default Service
+export default Service;
