@@ -164,7 +164,7 @@ const Footer = ({ onHomePage }) => {
           <div> 
             <footer className='flex justify-center  rounded bottom-0'>
                 <div className='flex justify-center items-baseline text-sm md:text-md tracking-wider mt-24 pb-2 md:pb-2 text-white'>
-                    <p>© {created} mx infinite, All rights reserved.</p>
+                    <p>© {created} edhuva, All rights reserved.</p>
                 </div>
             </footer>
           </div>
