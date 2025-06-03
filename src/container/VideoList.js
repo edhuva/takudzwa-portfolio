@@ -125,7 +125,7 @@ const VideoList = ({ onHomePage, onExplore }) => {
                   className="w-full h-full object-cover rounded-md"
                   controls
                   preload="metadata"
-                  poster={video.thumbnailUrl || "/fallback-thumbnail.jpg"}
+                  poster={video.thumbnail || "/fallback-thumbnail.jpg"}
                 >
                   <source src={video.videoUrl} type="video/mp4" />
                 </video>
