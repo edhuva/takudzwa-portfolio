@@ -93,7 +93,7 @@ const Footer = ({ onHomePage }) => {
 
 }
   return (
-    <section className={`${onHomePage ? 'mt-48 bottom-0' : 'min-h-screen mt-10'}   flex flex-col justify-center py-24 bg-black bg-opacity-80`} id ="contact">
+    <section className={`${onHomePage ? ' bottom-0' : 'min-h-screen mt-10'}   flex flex-col justify-center py-24 bg-black bg-opacity-80`} id ="contact">
       <div className='px-6 md:px-24'>
         {!onHomePage && <GenerateBreadCumb />}
       </div>
